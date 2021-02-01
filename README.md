@@ -9,28 +9,21 @@ PID_CB_t Heat_PID_CB = {0};
 ### 2. 初始化 PID 参数
 
 ```c
-Heat_PID_CB.Target = 100;
 Heat_PID_CB.p = 3.85;
 Heat_PID_CB.i = 0.07;
 Heat_PID_CB.d = 3.35;
 ```
 
-### 3. 更新输入值
-
-```
-Heat_PID_CB.Input = value;
-```
-
-### 4. PID 计算
+### 3. PID 计算
 
 ```c
-PID_Calculate(&Heat_PID_CB);
+Output = PID_Calculate(&Heat_PID_CB, 100, 25);
 ```
 
 ### 5. 将计算后的输出值，传入控制模块
 
 ```c
-ControlFunction(Heat_PID_CB.Output);
+HeatControl(Output);
 ```
 
 ### 6. 参数

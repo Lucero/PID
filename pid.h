@@ -3,11 +3,7 @@
 
 
 typedef struct
-{
-	float Target;    //Target value
-	float Input;
-	float Output;
-	
+{	
 	float Err;       //差分
 	float Err_Sum;   //积分
 	float Err_Diff;  //微分
@@ -21,7 +17,7 @@ typedef struct
 }PID_CB_t; //PID control block
 
 
-extern void PID_Calculate(PID_CB_t *PID_CB);
+extern float PID_Calculate(PID_CB_t *PID_CB, float Target, float Measurement);
 
 #endif
 
