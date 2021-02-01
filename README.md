@@ -9,9 +9,7 @@ PID_CB_t Heat_PID_CB = {0};
 ### 2. 初始化 PID 参数
 
 ```c
-Heat_PID_CB.p = 3.85;
-Heat_PID_CB.i = 0.07;
-Heat_PID_CB.d = 3.35;
+PID_Init(&Heat_PID_CB, 3.85, 0.07, 3.35)
 ```
 
 ### 3. PID 计算
